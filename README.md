@@ -70,6 +70,10 @@ Positive feedback in preamplifier → faster regeneration, reduced delay.
 Differential latch activation → lower power consumption.
 Trade-off: Slightly higher kickback noise, but better speed and efficiency.
 
+# Results
+
+
+
 
 
 
