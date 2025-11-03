@@ -30,13 +30,21 @@ During t0, only pMOS transistors contribute to transconductance, reducing regene
 # Specifications
 
 **Parameter	Values**
+
 M0-1 =	2 / 0.18 µm
+
 M2-3 =	1 / 0.18 µm
+
 M4-5 =	0.5 / 0.18 µm
+
 M6-7 =	2 / 0.18 µm
+
 M8-9 =	1.8 / 0.18 µm
+
 M10-11 =	4 / 0.18 µm
+
 M12 	= 0.44 / 0.18 µm
+
 
 
 
