@@ -50,16 +50,27 @@ M12 	= 0.44 / 0.18 µm
 
 # Working
 Two Key Stages:
-
 1. Preamplifier Stage (M1–M6):
-
 M1 & M2: Input transistors receive Vin⁺ and Vin⁻.
-
 M3 & M4: Diode-connected loads convert voltage difference into current.
-
 M5 & M6: Clock-controlled current sources activate the stage during comparison.
-
 Purpose: Amplify small input voltage differences.
+2. Latch Stage (M7–M12):
+M7 & M8: Cross-coupled inverters regenerate and amplify the signal.
+M9 & M10: Switching transistors connect latch to preamplifier when CLK is high.
+M11 & M12: Output buffers deliver clean digital results.
+Purpose: Make a fast and decisive digital output.
+
+Before CLK is high: Circuit is idle.
+When CLK goes high:
+Preamplifier activates.
+Latch connects and regenerates signal.
+Output is generated based on which input is higher.
+Proposed Design Enhancements:
+Positive feedback in preamplifier → faster regeneration, reduced delay.
+Differential latch activation → lower power consumption.
+Trade-off: Slightly higher kickback noise, but better speed and efficiency.
+
 
 
 
