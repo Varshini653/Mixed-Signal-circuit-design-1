@@ -84,6 +84,8 @@ Differential latch activation → lower power consumption.
 Trade-off: Slightly higher kickback noise, but better speed and efficiency.
 
 # Simulation results
+<img width="998" height="493" alt="image" src="https://github.com/user-attachments/assets/1371ce55-48e6-41cf-969c-1cd8775f0193" />
+
 ![1](https://github.com/user-attachments/assets/595d2ec0-947d-49f2-bfd2-3610bcc1987d)
 
 In the reset phase, CLK = 0, M4 and M5 are turned ON while M10 and M11 are OFF. Hence, the transistors charge the intermediate nodes Dn and Dp to the supply voltage (VDD). Meanwhile, the output nodes OUTp and OUTn are discharged to ground through M8 and M9. This is important to ensure that the comparator starts each comparison in a clean, defined initial condition.
