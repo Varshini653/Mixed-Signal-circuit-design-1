@@ -30,7 +30,7 @@ During t0, only pMOS transistors contribute to transconductance, reducing regene
 # Circuit Implementation
 <img width="867" height="641" alt="ss2_crop" src="https://github.com/user-attachments/assets/ac1b350b-0bb7-4548-9d0a-50c963b3eada" />
 
-# Specifications
+# Design Specifications
 
 **Parameter	Values**
 
