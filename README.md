@@ -95,7 +95,14 @@ During the comparison phase, when CLK = VDD, M10 and M11 switch on while M4 and 
 
 When Vinp < Vinn (600 mV) → the Dp node discharges faster than Dn. The latch amplifies this difference and drives OUTn high and OUTp low.
 
-If Vinp > Vinn (600 mV) → the other way around: Dn discharges faster and OUTp high and OUTn low
+If Vinp > Vinn (600 mV) → the other way around: Dn discharges faster and OUTp high and OUTn low.
+
+# ToDo
+<img width="1382" height="795" alt="ss2" src="https://github.com/user-attachments/assets/bb4a57fa-f4a5-40b3-aac6-dcbc1aa44e88" />
+
+Simulation and its results
+
+
 
 
 
