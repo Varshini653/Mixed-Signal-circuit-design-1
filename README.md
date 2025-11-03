@@ -11,6 +11,7 @@ he conventional two-stage dynamic comparator consists of a preamplifier stage an
 
 Operation Phases:
 Reset Phase (CLK = 0): M4 and M5 are ON, charging nodes Dn and Dp to VDD; output nodes OUTp and OUTn discharge to ground.
+
 Comparison Phase (CLK = VDD): M10 and M11 are ON, M4 and M5 are OFF; Dn and Dp discharge based on input voltages (Vinn, Vinp), generating a differential output amplified by the cross-coupled latch.
 
 Advantages:
@@ -18,7 +19,9 @@ Lower kickback noise, Better low-voltage compatibility, Flexible trade-off betwe
 
 Delay Analysis:
 Total delay tdelay = t0 + t(latch)
+
 t0: Time to build initial output difference; depends on pMOS transconductance
+
 t(latch): Time for output to reach 0.5VDD; depends on combined pMOS and nMOS transconductance
 
 Limitation: 
