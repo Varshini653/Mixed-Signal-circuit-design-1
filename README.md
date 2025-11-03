@@ -55,8 +55,10 @@ Vinp = 0.6 mV
 Vinn = 0.9 mV
 
 clk -> Vpulse -> V1 = 0 V
-                 V2 = 1.2 V
-                 Period = 3 ns
+
+V2 = 1.2 V
+
+Period = 3 ns
                  
 
 # Working
