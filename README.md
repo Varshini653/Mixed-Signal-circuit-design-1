@@ -86,6 +86,14 @@ Trade-off: Slightly higher kickback noise, but better speed and efficiency.
 # Simulation results
 ![1](https://github.com/user-attachments/assets/595d2ec0-947d-49f2-bfd2-3610bcc1987d)
 
+In the reset phase, CLK = 0, M4 and M5 are turned ON while M10 and M11 are OFF. Hence, the transistors charge the intermediate nodes Dn and Dp to the supply voltage (VDD). Meanwhile, the output nodes OUTp and OUTn are discharged to ground through M8 and M9. This is important to ensure that the comparator starts each comparison in a clean, defined initial condition.
+During the comparison phase, when CLK = VDD, M10 and M11 switch on while M4 and M5 switch off. As a result, the nodes Dn and Dp start to discharge at different rates due to the differential input voltages Vinp and Vinn. Now, assuming that Vinn is fixed at 600 mV, and Vinp is swept during a parametric analysis —
+
+When Vinp < Vinn (600 mV) → the Dp node discharges faster than Dn. The latch amplifies this difference and drives OUTn high and OUTp low.
+
+If Vinp > Vinn (600 mV) → the other way around: Dn discharges faster and OUTp high and OUTn low
+
+
 
 
 
