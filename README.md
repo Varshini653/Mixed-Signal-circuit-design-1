@@ -48,6 +48,18 @@ M10-11 =	4 / 0.18 µm
 
 M12 	= 0.44 / 0.18 µm
 
+# Working
+Two Key Stages:
+
+1. Preamplifier Stage (M1–M6):
+
+M1 & M2: Input transistors receive Vin⁺ and Vin⁻.
+
+M3 & M4: Diode-connected loads convert voltage difference into current.
+
+M5 & M6: Clock-controlled current sources activate the stage during comparison.
+
+Purpose: Amplify small input voltage differences.
 
 
 
