@@ -84,7 +84,9 @@ Differential latch activation → lower power consumption.
 Trade-off: Slightly higher kickback noise, but better speed and efficiency.
 
 # Simulation results
+
 <img width="998" height="493" alt="image" src="https://github.com/user-attachments/assets/1371ce55-48e6-41cf-969c-1cd8775f0193" />
+
 
 ![1](https://github.com/user-attachments/assets/595d2ec0-947d-49f2-bfd2-3610bcc1987d)
 
