@@ -49,10 +49,15 @@ M10-11 =	4 / 0.18 µm
 M12 	= 0.44 / 0.18 µm
 
 Vdd = 1.2 V
+
 Vinp = 0.6 mV
+
 Vinn = 0.9 mV
+
 clk -> Vpulse -> V1 = 0 V
+
                  V2 = 1.2 V
+                 
                  Period = 3 ns
                  
 
