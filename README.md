@@ -62,14 +62,23 @@ M11 & M12: Output buffers deliver clean digital results.
 Purpose: Make a fast and decisive digital output.
 
 Before CLK is high: Circuit is idle.
+
 When CLK goes high:
+
 Preamplifier activates.
+
 Latch connects and regenerates signal.
+
 Output is generated based on which input is higher.
+
 Proposed Design Enhancements:
+
 Positive feedback in preamplifier → faster regeneration, reduced delay.
+
 Differential latch activation → lower power consumption.
+
 Trade-off: Slightly higher kickback noise, but better speed and efficiency.
+
 
 
 
