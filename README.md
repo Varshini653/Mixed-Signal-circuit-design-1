@@ -97,10 +97,73 @@ When Vinp < Vinn (600 mV) → the Dp node discharges faster than Dn. The latch a
 
 If Vinp > Vinn (600 mV) → the other way around: Dn discharges faster and OUTp high and OUTn low.
 
-# ToDo
-<img width="1382" height="795" alt="ss2" src="https://github.com/user-attachments/assets/bb4a57fa-f4a5-40b3-aac6-dcbc1aa44e88" />
+# 2) Proposed Dynamic Comparator
+Proposed dynamic comparator works in two phases under the control of clock signals: reset phase and comparison (evaluation) phase. The design combines modified latching stages with delayed control so that regeneration can be sped up, and power consumption lowered.
 
-Simulation and its results
+# Working
+1. Reset Phase
+   
+When the clock is low, the circuit enters the reset  state.      
+During the reset state: 
+Internal nodes are pre-charged; some are charged up to the supply voltage while some are pulled down to ground. 
+The output nodes are also charged to the supply voltage. 
+All transistors in the cross-coupled latch are biased and active. In contrast, most conventional designs make partial transistors inactive. This represents an important improvement because then the latch is already ready to respond electrically and does not have to wait for internal time before activating when comparison starts.
+
+3. Comparison Phase
+
+The clock signal high marks the entrance into an evaluation of the input differential. This phase can be analyzed in two sub-phases.
+a) Early Comparison Stage:
+Both output nodes actively discharge from the pre-charged state immediately after the clock rises. During this stage: 
+NMOS and PMOS devices in the latch both help amplify the small differential input. 
+
+The comparator generates a small voltage difference between the two output nodes, depending on the input signals. Because more devices that charge and discharge than in a traditional design are now in the concurrent amplification mode, the comparator can develop a detectable difference at the outputs more rapidly. 
+
+b) Regeneration Stage with delayed control:
+A delayed version of the clock signal activates a couple of switching transistors after a controlled short pause. These switches reinforce the output nodes more strongly to the internal nodes and form a positive feedback loop. 
+This delay is deliberate:
+- It avoids unnecessary short-circuit current during the switch-over. 
+- It ensures that the regenerative latch enters fast amplification at the correct time.
+Once the feedback is activated, even a small remaining voltage difference at the outputs gets quickly increased until one output reaches the level of logic high while the other reaches that of logic low. The fast transition clears any surviving metastability and determines the comparison outcome.
+
+c) Delay Assessment:
+The time taken for the comparator to settle on a stable output is seen as the sum of:
+- Delay in the clock to turn the switches on,
+- The discharge time interval,
+- Latching with regeneration.
+Regeneration will now be greatly enhanced compared to a counterpart charge-pump timing due to a more rapid turn-on process through the latch.
+
+# Circuit Implementation
+<img width="1382" height="795" alt="ss2" src="https://github.com/user-attachments/assets/bb4a57fa-f4a5-40b3-aac6-dcbc1aa44e88" />
+# Simulation Results
+![22](https://github.com/user-attachments/assets/c0212223-1695-4534-b96c-6f39b0791a7c)
+
+# Overall Advantages
+
+Compared with the older topologies of comparators, the novel scheme has several advances:
+The latch starts comparison in a completely active state rather than a partially idle state. Both transistors contribute to signal amplification early, enhancing speed. Delayed control eliminates dead current paths and fine-tunes timing. The period on metastability is halved, thus the comparator produces a valid output much sooner. The decrease in comparison time leads to lesser energy consumption. By attaining these modifications, the comparator will be able to give a higher speed and lower power operation without rising circuit complexity significantly.
+
+# Performance Metrics based on our simulations
+
+Performance Improvement Observed
+Delay reduced from 182.94 ps → 104.85 ps (↓ 42.7%)
+Power reduced from 625.21 mW → 1.19 mW (↓ 99.8%)
+Confirms:
+Enhanced gm during early comparison
+Faster regeneration
+Shorter metastability period
+Lower dynamic energy consumption
+
+# Conclusion
+
+The proposed dynamic comparator demonstrates an effective balance of speed, power efficiency, and structural simplicity. By ensuring that the cross-coupled latch transistors remain in strong inversion during the reset phase, the design provides a higher effective transconductance at the start of comparison. 
+This leads to faster regeneration, reduced delay, and lower energy consumption compared to conventional comparator architectures. Additionally, the compact layout and ability to operate at low supply voltages make this design suitable for modern low-power, high-speed analog and mixed-signal applications.
+
+# Acknowledgement
+
+ We sincerely thank the Department of Electronics and Communication Engineering, NIE, Mysuru, for their support and resources. We are especially grateful to Dr. Remya Jayachandran, Assistant Professor, ECE Department, for her guidance and valuable advice throughout this project.
+
+
+
 
 
 
